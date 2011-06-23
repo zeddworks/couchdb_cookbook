@@ -27,6 +27,13 @@ package "couchdb" do
   )
 end
 
+case node['platform']
+when "redhat"
+  ohai "reload_users_groups" do
+    action :reload
+  end
+end
+
 directory "/var/lib/couchdb" do
   owner "couchdb"
   group "couchdb"
