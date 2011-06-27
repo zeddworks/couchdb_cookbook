@@ -29,9 +29,7 @@ end
 
 case node['platform']
 when "redhat"
-  ohai "reload_users_groups" do
-    action :reload
-  end
+  ohai "reload_users_groups"
 end
 
 directory "/var/lib/couchdb" do
